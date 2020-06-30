@@ -11,10 +11,6 @@ import com.coutinho.coutinhofood.modelo.Cliente;
 public class NotificadorEmailMock implements Notificador{
 
 
-	public NotificadorEmailMock() {
-		System.out.println("Notificador email MOCK");
-	}
-	
 	@Override
 	public void notificar(Cliente cliente , String mensagem ) {
 		System.out.printf("MOCK: Notificação seria enviada para %s atrav�s do email %s: %s\n" ,

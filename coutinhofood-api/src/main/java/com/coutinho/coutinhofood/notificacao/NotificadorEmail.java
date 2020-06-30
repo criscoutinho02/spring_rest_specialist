@@ -11,9 +11,6 @@ import com.coutinho.coutinhofood.modelo.Cliente;
 @Component
 public class NotificadorEmail implements Notificador {
 	
-	public NotificadorEmail() {
-		System.out.println("Notificador email real");
-	}
 
 	@Override
 	public void notificar(Cliente cliente , String mensagem ) {
