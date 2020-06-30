@@ -11,7 +11,6 @@ public class NotificacaoConfig {
 	//@Bean
 	public NotificadorEmail notificadorEmail() {
 		NotificadorEmail notificador = new NotificadorEmail();
-		notificador.setCaixaAlta(false);
 		return notificador;
 	}
 

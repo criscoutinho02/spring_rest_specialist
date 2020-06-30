@@ -5,21 +5,24 @@ import org.springframework.stereotype.Component;
 
 import com.coutinho.coutinhofood.modelo.Cliente;
 
-
-@Profile("prod")
+@Profile("dev")
 @TipoDoNotificador(NivelUrgencia.SEMURGENCIA)
 @Component
-public class NotificadorEmail implements Notificador {
-	
-	public NotificadorEmail() {
-		System.out.println("Notificador email real");
-	}
+public class NotificadorEmailMock implements Notificador{
 
+
+	public NotificadorEmailMock() {
+		System.out.println("Notificador email MOCK");
+	}
+	
 	@Override
 	public void notificar(Cliente cliente , String mensagem ) {
-
-		System.out.printf("Notificando %s atrav�s do email %s : %s\n" ,
-				cliente.getNome() , cliente.getEmail() ,  mensagem);
+		System.out.printf("MOCK: Notificação seria enviada para %s atrav�s do email %s: %s\n" ,
+				cliente.getNome() , cliente.getEmail() , mensagem);
 	}
 
+
+	
 }
+
+
