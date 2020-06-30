@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import com.coutinho.coutinhofood.modelo.Cliente;
 
 @Component
-@Qualifier("urgente")
+@TipoDoNotificador(NivelUrgencia.URGENTE)
 public class NotificadorSMS implements Notificador {
 	
 	private boolean caixaAlta;
