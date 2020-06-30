@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.coutinho.coutinhofood.modelo.Cliente;
 
-@Profile("dev")
+@Profile("development")
 @TipoDoNotificador(NivelUrgencia.SEMURGENCIA)
 @Component
 public class NotificadorEmailMock implements Notificador{
