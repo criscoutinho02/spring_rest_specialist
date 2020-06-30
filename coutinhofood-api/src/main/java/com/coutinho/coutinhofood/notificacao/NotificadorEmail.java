@@ -1,11 +1,11 @@
 package com.coutinho.coutinhofood.notificacao;
 
-import org.springframework.context.annotation.Primary;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.coutinho.coutinhofood.modelo.Cliente;
 
-@Primary
+@Qualifier("normal")
 @Component
 public class NotificadorEmail implements Notificador {
 	

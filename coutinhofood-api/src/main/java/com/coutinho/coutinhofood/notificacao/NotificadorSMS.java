@@ -1,10 +1,12 @@
 package com.coutinho.coutinhofood.notificacao;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.coutinho.coutinhofood.modelo.Cliente;
 
 @Component
+@Qualifier("urgente")
 public class NotificadorSMS implements Notificador {
 	
 	private boolean caixaAlta;
