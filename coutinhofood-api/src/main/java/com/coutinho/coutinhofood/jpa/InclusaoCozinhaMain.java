@@ -8,6 +8,7 @@ import org.springframework.context.ApplicationContext;
 
 import com.coutinho.coutinhofood.CoutinhofoodApiApplication;
 import com.coutinho.coutinhofood.domain.model.Cozinha;
+import com.coutinho.coutinhofood.domain.repository.CozinhaRepository;
 
 public class InclusaoCozinhaMain {
 	
@@ -17,16 +18,15 @@ public class InclusaoCozinhaMain {
 				.web(WebApplicationType.NONE)
 				.run(args);
 				  
-		CadastroCozinha cadastroCozinha = applicationContext.getBean(CadastroCozinha.class);
-		
+		CozinhaRepository cadastroCozinha = applicationContext.getBean(CozinhaRepository.class);		
 		Cozinha cozinha1 = new Cozinha();
 		cozinha1.setNome("Brasileira");
 		
 		Cozinha cozinha2 = new Cozinha();
 		cozinha2.setNome("Japonesa");
 		
-		cozinha1 = cadastroCozinha.adiciona(cozinha1);
-		cozinha2 = cadastroCozinha.adiciona(cozinha2);
+		cozinha1 = cadastroCozinha.adicionar(cozinha1);
+		cozinha2 = cadastroCozinha.adicionar(cozinha2);
 		
 		System.out.printf("%d - %s\n" , cozinha1.getId() , cozinha1.getNome());
 		System.out.printf("%d - %s\n" , cozinha2.getId() , cozinha2.getNome());

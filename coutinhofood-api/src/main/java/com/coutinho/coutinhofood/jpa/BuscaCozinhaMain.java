@@ -10,7 +10,7 @@ import com.coutinho.coutinhofood.CoutinhofoodApiApplication;
 import com.coutinho.coutinhofood.domain.model.Cozinha;
 import com.coutinho.coutinhofood.domain.repository.CozinhaRepository;
 
-public class ConsultaCozinhaMain {
+public class BuscaCozinhaMain {
 	
 	public static void main(String[] args) {
 		
@@ -18,12 +18,11 @@ public class ConsultaCozinhaMain {
 				.web(WebApplicationType.NONE)
 				.run(args);
 				  
-		CozinhaRepository cozinhas = applicationContext.getBean(CozinhaRepository.class);		
-		List<Cozinha> todasCozinhas = cozinhas.todas();
+		CozinhaRepository cadastroCozinha = applicationContext.getBean(CozinhaRepository.class);
+		Cozinha cozinha = cadastroCozinha.porId(2L);
 		
-		for(Cozinha cozinha : todasCozinhas) {
-			System.out.println(cozinha.getNome());
-		}
+		System.out.println(cozinha.getNome());
+		
 		
 	}
 
