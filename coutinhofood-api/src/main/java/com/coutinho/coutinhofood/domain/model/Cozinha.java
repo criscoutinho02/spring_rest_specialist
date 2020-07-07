@@ -2,6 +2,8 @@ package com.coutinho.coutinhofood.domain.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -9,9 +11,9 @@ import javax.persistence.Id;
 public class Cozinha {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name="nom_cozinha" , length = 30)
 	private String nome;
 
 	public Long getId() {
