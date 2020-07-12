@@ -8,9 +8,11 @@ import org.springframework.context.ApplicationContext;
 
 import com.coutinho.coutinhofood.CoutinhofoodApiApplication;
 import com.coutinho.coutinhofood.domain.model.Cozinha;
+import com.coutinho.coutinhofood.domain.model.Restaurante;
 import com.coutinho.coutinhofood.domain.repository.CozinhaRepository;
+import com.coutinho.coutinhofood.domain.repository.RestauranteRepository;
 
-public class ConsultaCozinhaMain {
+public class ExclusaoRestauranteMain {
 	
 	public static void main(String[] args) {
 		
@@ -18,12 +20,13 @@ public class ConsultaCozinhaMain {
 				.web(WebApplicationType.NONE)
 				.run(args);
 				  
-		CozinhaRepository cozinhas = applicationContext.getBean(CozinhaRepository.class);		
-		List<Cozinha> todasCozinhas = cozinhas.todas();
+		RestauranteRepository cadastroRestaurante = applicationContext.getBean(RestauranteRepository.class);		
+		Restaurante restaurante = new Restaurante();
+		restaurante.setId(1L); 
+		cadastroRestaurante.remover(restaurante);
+	
 		
-		for(Cozinha cozinha : todasCozinhas) {
-			System.out.println(cozinha.getNome());
-		}
+				
 		
 	}
 
