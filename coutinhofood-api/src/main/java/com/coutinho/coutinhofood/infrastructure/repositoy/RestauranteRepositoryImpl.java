@@ -32,7 +32,7 @@ public class RestauranteRepositoryImpl implements RestauranteRepository{
 
 	@Transactional
 	@Override
-	public Restaurante adicionar(Restaurante restaurante) {
+	public Restaurante salvar(Restaurante restaurante) {
 		// TODO Auto-generated method stub
 		return manager.merge(restaurante);
 	}

@@ -8,7 +8,7 @@ public interface EstadoRepository {
 	
 	List<Estado> todos();
 	Estado porUF(char uf);
-	Estado adicionar(Estado estado);
+	Estado salvar(Estado estado);
 	void remover(Estado estado);
 
 }

@@ -25,7 +25,7 @@ public class AlteracaoCozinhaMain {
 		cozinha.setNome("Brasileira");
 	
 		
-		cozinha = cadastroCozinha.adicionar(cozinha);
+		cozinha = cadastroCozinha.salvar(cozinha);
 				
 		
 	}
