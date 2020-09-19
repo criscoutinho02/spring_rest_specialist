@@ -10,4 +10,6 @@ public class CoutinhofoodApiApplication {
 		SpringApplication.run(CoutinhofoodApiApplication.class, args);
 	}
 
+	
+	
 }

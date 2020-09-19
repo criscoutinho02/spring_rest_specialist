@@ -2,13 +2,14 @@ package com.coutinho.coutinhofood.domain.repository;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 import com.coutinho.coutinhofood.domain.model.Estado;
 
-public interface EstadoRepository {
+@Repository
+public interface EstadoRepository extends JpaRepository<Estado, String> {
 	
-	List<Estado> todos();
-	Estado porUF(char uf);
-	Estado salvar(Estado estado);
-	void remover(Estado estado);
+
 
 }

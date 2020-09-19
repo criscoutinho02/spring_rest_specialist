@@ -3,7 +3,6 @@ package com.coutinho.coutinhofood.domain.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +18,7 @@ public class CadastroCozinhaService {
 	CozinhaRepository cozinhaRepository;
 	
 	public Cozinha salvar(Cozinha cozinha) {
-		return cozinhaRepository.salvar(cozinha);
+		return cozinhaRepository.save(cozinha);
 		
 	}
 	
@@ -27,7 +26,7 @@ public class CadastroCozinhaService {
 	public void excluir(Long cozinhaId) {
 		
 		try {
-			cozinhaRepository.remover(cozinhaId);
+			cozinhaRepository.deleteById(cozinhaId);
 			
 		}catch(EmptyResultDataAccessException e) {
 			throw new EntidadeNaoEncontradaException(
