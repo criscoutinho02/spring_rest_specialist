@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.coutinho.coutinhofood.domain.model.Cozinha;
 
 @Repository
-public interface CozinhaRepository extends JpaRepository<Cozinha, Long>{
+public interface CozinhaRepository extends CustomJpaRepository<Cozinha, Long>{
 		
 	List<Cozinha> findByNomeContaining(String nome);
 	
